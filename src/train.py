@@ -107,7 +107,7 @@ class DebugCallback(keras.callbacks.Callback):
         res = np.concatenate((rys, predictions), -1)
         plt.plot(res[:, 1], res[:, 2], 'bo')
         plt.show()
-        #plt.savefig("out.png")
+        plt.savefig("out.png")
 
 debug = DebugCallback()
 
@@ -123,6 +123,7 @@ predictions = model.predict(rxs)
 res = np.concatenate( (rys,predictions), -1 )
 plt.plot(res[:,1], res[:,2], 'bo')
 plt.show()
+plt.savefig("out_pred.png")
 print( res )
 np.savetxt('results.txt', res)
 
